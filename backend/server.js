@@ -64,7 +64,6 @@ app.put("/api/tasks/:id",asyncHandler(async(req,res)=>{
     res.status(200).json(task);
 }));
 app.delete("/api/tasks/:id", asyncHandler(async (req, res) => {
-    // your code
     const task = await Task.findByIdAndDelete(req.params.id);
     if (!task) {
         return res.status(404).json({
